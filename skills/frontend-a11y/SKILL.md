@@ -257,6 +257,8 @@ export function Dropdown({ options, onSelect }: { options: string[]; onSelect: (
   const [activeIndex, setActiveIndex] = useState(0);
   const listId = useId();
 
+  if (!options.length) return null;
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     switch (e.key) {
       case 'ArrowDown':
